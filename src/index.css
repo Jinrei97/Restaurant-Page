@@ -2,3 +2,8 @@
     background: url("./background.jpg");
     background-repeat: no-repeat;
 }
+
+.body img {
+    aspect-ratio: 1/1;
+    width: 25vw;
+}
