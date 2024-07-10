@@ -1,9 +1,10 @@
-.img {
-    background: url("./background.jpg");
-    background-repeat: no-repeat;
-}
+@import url("./modern-reset.css"); 
 
-.body img {
-    aspect-ratio: 1/1;
-    width: 25vw;
+header {
+    padding: 1rem 0;
 }
+    header > nav {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }

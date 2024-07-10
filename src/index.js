@@ -1,4 +1,6 @@
-import * as css from "./index.css";
+import * as index_css from "./index.css";
+import * as home_css from "./home.css";
+import * as contacts_css from "./contact_us.css";
 import loadHome from "./home.js";
 import loadMenu from "./menu.js";
 import loadContact from "./contact_us.js";
@@ -14,23 +16,29 @@ const btn_contact = document.querySelector(".contact");
 function clearContent() {
     div_content.replaceChildren();
 };
-
-loadHome(left, center, right);
+function changeContentClass(newClass) {
+    div_content.className = newClass;
+}
 
 btn_home.addEventListener("click", e => {
     clearContent();
     loadHome(left, center, right);
+    changeContentClass("home");
     console.log("loaded_home");
 });
 
 btn_menu.addEventListener("click", e => {
     clearContent();
     loadMenu();
+    changeContentClass("menu");
     console.log("loaded_menu");
 });
 
 btn_contact.addEventListener("click", e => {
     clearContent();
     loadContact();
-    console.log("loaded_menu");
+    changeContentClass("contacts");
+    console.log("loaded_contacts");
 });
+
+btn_home.click();

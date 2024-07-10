@@ -1,3 +1,40 @@
+function createCards(imgClass, type, text, link) {
+    const div_container = document.createElement("div");
+    div_container.classList.add("card");
+
+    const div_image = document.createElement("div");
+    div_image.classList.add("image");
+    div_image.classList.add(imgClass);
+
+    const text_element = document.createElement(type);
+    text_element.textContent = text;
+    if (type === "a") text_element.href = link;
+
+    div_container.appendChild(div_image);
+    div_container.appendChild(text_element);
+    return div_container;
+};
+
+function createContacts() {
+    const div_contacts = document.createElement("div");
+
+    const div_text = document.createElement("div");
+    div_text.textContent = "CONTATTACI";
+
+    const div_cards = document.createElement("div");
+    div_cards.className = "cards";
+    const card_list = [];
+    card_list.push(createCards("telephone", "p", "+39 0123456789", ""));
+    card_list.push(createCards("message", "p", "info@damario.it", ""));
+    card_list.push(createCards("facebook", "a", "@DaMario", ""));
+    card_list.push(createCards("instagram", "a", "#DaMario", ""));
+    card_list.push(createCards("tripadvisor", "a", "Da Mario", ""));
+    for (let card of card_list) div_cards.appendChild(card);
+
+    div_contacts.appendChild(div_text);
+    div_contacts.appendChild(div_cards);
+    return div_contacts;
+}
 
 function createLabelInput(attrName, name, type, placeholder, req, labelMessage, order=1) {
     const label = document.createElement("label");
@@ -39,10 +76,10 @@ function createForm() {
     btn_submit.textContent = "INVIA";
     form.appendChild(btn_submit);
     return form;
-}
+};
 
 export default function loadContact() {
     const content = document.querySelector("#content");
-
+    content.appendChild(createContacts());
     content.appendChild(createForm());
 }

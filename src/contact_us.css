@@ -1,0 +1,56 @@
+
+.contacts,
+.contacts > div,
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+    .cards {
+        display: flex;
+        gap: 1rem;
+    }
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+    .image {
+        background-repeat: no-repeat;
+        aspect-ratio: 1/1;
+        height: 50px;
+        background-size: contain;
+    }
+        .telephone {
+            background-image: url("./img/teleph.png");
+        }
+        .message {
+            background-image: url("./img/message.png");
+        }
+        .facebook {
+            background-image: url("./img/facebook.png");
+        }
+        .instagram {
+            background-image: url("./img/insta.png");
+        }
+        .tripadvisor {
+            background-image: url("./img/trip.png");
+        }
+
+    form {
+        width: min(70vw, 400px);
+        border: 3px solid black;
+        padding: 1rem;
+        background-color: rgb(179, 179, 179);
+    }
+        form > div {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            justify-items: center;
+        }
+        form > div:last-of-type {
+            display: flex;
+            gap:1rem;
+        }
