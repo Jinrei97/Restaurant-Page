@@ -6,7 +6,7 @@ function createImg(clas, url, alt) {
     return img;
 }
 
-export default function loadPage(left, center, right) {
+export default function loadHome(left, center, right) {
     const content = document.querySelector("#content");
 
     const img_div = document.createElement("div");
