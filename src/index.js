@@ -1,5 +1,7 @@
 import * as css from "./index.css";
 import loadHome from "./home.js";
+import loadMenu from "./menu.js";
+import loadContact from "./contact_us.js";
 import left from "./left.jpg"
 import center from "./center.jpg"
 import right from "./right.jpg"
@@ -19,4 +21,16 @@ btn_home.addEventListener("click", e => {
     clearContent();
     loadHome(left, center, right);
     console.log("loaded_home");
+});
+
+btn_menu.addEventListener("click", e => {
+    clearContent();
+    loadMenu();
+    console.log("loaded_menu");
+});
+
+btn_contact.addEventListener("click", e => {
+    clearContent();
+    loadContact();
+    console.log("loaded_menu");
 });
